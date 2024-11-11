@@ -21,20 +21,20 @@ export default function Contact() {
           </div>
 
           <form className="max-w-md mx-auto">
-            <div className="flex gap-4">
+            <div className="flex flex-col sm:flex-row gap-4">
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 px-4 py-3 bg-[#24272D] border border-gray-700 text-white focus:outline-none focus:border-[#33FEA8]"
+                className="flex-1 px-4 py-3 bg-[#24272D] border border-gray-700 text-white focus:outline-none focus:border-[#33FEA8] w-full"
                 required
               />
               <button
                 type="submit"
-                className="relative inline-flex items-center justify-center px-8 py-3 font-semibold text-[#24272D] transition-all duration-200 ease-in-out hover:translate-x-[-4px] hover:translate-y-[-4px] group"
+                className="relative inline-flex items-center justify-center px-8 py-3 font-semibold text-[#24272D] transition-all duration-200 ease-in-out hover:translate-x-[-4px] hover:translate-y-[-4px] group w-full sm:w-auto"
               >
                 <span className="absolute inset-0 translate-x-[6px] translate-y-[6px] bg-[#238c5c]"></span>
                 <span className="absolute inset-0 bg-[#33FEA8]"></span>
-                <span className="relative flex items-center">
+                <span className="relative flex items-center justify-center">
                   Subscribe
                   <Send className="ml-2 h-4 w-4" />
                 </span>

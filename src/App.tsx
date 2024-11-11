@@ -3,6 +3,7 @@ import Hero from './components/Hero';
 import Services from './components/Services';
 import HowWeWork from './components/HowWeWork';
 import About from './components/About';
+import Testimonials from './components/Testimonials';
 import JoinUs from './components/JoinUs';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -16,6 +17,7 @@ export default function App() {
         <Services />
         <HowWeWork />
         <About />
+        <Testimonials />
         <JoinUs />
         <Contact />
       </main>
