@@ -15,10 +15,22 @@
   --primary-800: #009966;
   --primary-900: #008055;
 
+  /* Secondary Colors */
+  --secondary-400: #A78BFA;
+  --secondary-500: #8B5CF6;
+  --secondary-600: #7C3AED;
+
+  /* Accent Colors */
+  --accent-400: #FB7185;
+  --accent-500: #F43F5E;
+  --accent-600: #E11D48;
+
   /* Background Colors */
-  --bg-dark: #1A1D22;
-  --bg-card: #24272D;
-  --bg-card-hover: #2A2D35;
+  --bg-dark: #111827;
+  --bg-card: #1F2937;
+  --bg-card-hover: #374151;
+  --bg-gradient-start: #1E1B4B;
+  --bg-gradient-end: #111827;
 
   /* Text Colors */
   --text-primary: #FFFFFF;
@@ -32,7 +44,7 @@
   }
 
   body {
-    @apply bg-[var(--bg-dark)] text-[var(--text-primary)];
+    @apply bg-gradient-to-b from-[var(--bg-gradient-start)] to-[var(--bg-gradient-end)] text-[var(--text-primary)];
   }
 }
 
@@ -42,15 +54,15 @@
   }
 
   .btn-primary .btn-shadow {
-    @apply absolute inset-0 translate-x-[6px] translate-y-[6px] bg-[var(--primary-700)];
+    @apply absolute inset-0 translate-x-[6px] translate-y-[6px] bg-[var(--secondary-600)];
   }
 
   .btn-primary .btn-base {
-    @apply absolute inset-0 bg-[var(--primary-400)];
+    @apply absolute inset-0 bg-[var(--secondary-500)];
   }
 
   .btn-primary .btn-content {
-    @apply relative text-[var(--bg-dark)] flex items-center;
+    @apply relative text-[var(--text-primary)] flex items-center;
   }
 
   .card {
@@ -63,6 +75,10 @@
 
   .section-description {
     @apply text-[var(--text-secondary)] text-lg;
+  }
+
+  .gradient-text {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-[var(--secondary-400)] to-[var(--primary-400)];
   }
 }
 

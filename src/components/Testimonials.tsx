@@ -1,4 +1,4 @@
-import { Star, Quote } from 'lucide-react';
+import { Star, Quote, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useState, useEffect, useRef } from 'react';
 
 const studentTestimonials = [
@@ -60,6 +60,20 @@ const clientTestimonials = [
     image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
     quote: "The perfect blend of fresh perspectives and professional delivery. We're happy to partner with Earn4Edu.",
     logo: "https://images.unsplash.com/photo-1567446537708-ac4aa75c9c28?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+  },
+  {
+    name: "Sarah Miller",
+    company: "Innovation Hub",
+    image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+    quote: "The students bring fresh energy and innovative ideas to our projects. Their work quality exceeds expectations.",
+    logo: "https://images.unsplash.com/photo-1567446537708-ac4aa75c9c28?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+  },
+  {
+    name: "Robert Chen",
+    company: "Global Tech Solutions",
+    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+    quote: "Working with Earn4Edu students has been a game-changer for our digital initiatives. They're professional and skilled.",
+    logo: "https://images.unsplash.com/photo-1567446537708-ac4aa75c9c28?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
   }
 ];
 
@@ -67,6 +81,13 @@ export default function Testimonials() {
   const [activeTab, setActiveTab] = useState('students');
   const carouselRef = useRef<HTMLDivElement>(null);
   const [autoScroll, setAutoScroll] = useState(true);
+
+  const scrollToDirection = (direction: 'left' | 'right') => {
+    if (carouselRef.current) {
+      const scrollAmount = direction === 'left' ? -350 : 350;
+      carouselRef.current.scrollLeft += scrollAmount;
+    }
+  };
 
   useEffect(() => {
     let intervalId: NodeJS.Timeout;
@@ -80,7 +101,7 @@ export default function Testimonials() {
           if (currentScroll + clientWidth >= scrollWidth) {
             carouselRef.current.scrollLeft = 0;
           } else {
-            carouselRef.current.scrollLeft += clientWidth / 2;
+            carouselRef.current.scrollLeft += 350;
           }
         }
       }, 3000);
@@ -95,13 +116,6 @@ export default function Testimonials() {
 
   const handleMouseEnter = () => setAutoScroll(false);
   const handleMouseLeave = () => setAutoScroll(true);
-
-  const carouselStyle = {
-    scrollBehavior: 'smooth' as const,
-    WebkitOverflowScrolling: 'touch' as const,
-    scrollbarWidth: 'none' as const,
-    msOverflowStyle: 'none' as const
-  };
 
   return (
     <section className="py-20 bg-[#24272D]">
@@ -134,49 +148,72 @@ export default function Testimonials() {
           </div>
         </div>
 
-        <div 
-          ref={carouselRef}
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-          className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide -mx-4 px-4 pb-4 gap-6"
-          style={carouselStyle}
-        >
-          {(activeTab === 'students' ? studentTestimonials : clientTestimonials).map((testimonial, index) => (
-            <div
-              key={index}
-              className="flex-none w-[350px] snap-center bg-[#2A2D35] p-8 rounded-2xl hover:scale-105 transition-transform duration-300"
-            >
-              <div className="flex items-start gap-4 mb-6">
-                <img
-                  src={testimonial.image}
-                  alt={testimonial.name}
-                  className="w-16 h-16 rounded-full object-cover"
-                />
-                <div>
-                  <h3 className="text-white font-semibold">{testimonial.name}</h3>
-                  <p className="text-[#33FEA8]">
-                    {activeTab === 'students' ? testimonial.role : testimonial.company}
-                  </p>
-                </div>
-              </div>
+        <div className="relative">
+          <button
+            onClick={() => scrollToDirection('left')}
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 bg-[#33FEA8] text-[#24272D] rounded-full p-2 shadow-lg hover:scale-110 transition-transform"
+            aria-label="Previous slide"
+          >
+            <ChevronLeft className="h-6 w-6" />
+          </button>
 
-              <div className="mb-6">
-                <Quote className="h-8 w-8 text-[#33FEA8]/20 mb-4" />
-                <p className="text-gray-300">{testimonial.quote}</p>
-              </div>
-
-              {activeTab === 'students' && (
-                <div className="flex gap-1">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star
-                      key={i}
-                      className="h-5 w-5 text-[#33FEA8] fill-[#33FEA8]"
-                    />
-                  ))}
+          <div 
+            ref={carouselRef}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide px-4 pb-4 gap-6"
+            style={{
+              scrollBehavior: 'smooth',
+              WebkitOverflowScrolling: 'touch',
+              scrollbarWidth: 'none',
+              msOverflowStyle: 'none'
+            }}
+          >
+            {(activeTab === 'students' ? studentTestimonials : clientTestimonials).map((testimonial, index) => (
+              <div
+                key={index}
+                className="flex-none w-[350px] snap-center bg-[#2A2D35] p-8 rounded-2xl hover:scale-105 transition-transform duration-300"
+              >
+                <div className="flex items-start gap-4 mb-6">
+                  <img
+                    src={testimonial.image}
+                    alt={testimonial.name}
+                    className="w-16 h-16 rounded-full object-cover"
+                  />
+                  <div>
+                    <h3 className="text-white font-semibold">{testimonial.name}</h3>
+                    <p className="text-[#33FEA8]">
+                      {activeTab === 'students' ? testimonial.role : testimonial.company}
+                    </p>
+                  </div>
                 </div>
-              )}
-            </div>
-          ))}
+
+                <div className="mb-6">
+                  <Quote className="h-8 w-8 text-[#33FEA8]/20 mb-4" />
+                  <p className="text-gray-300">{testimonial.quote}</p>
+                </div>
+
+                {activeTab === 'students' && (
+                  <div className="flex gap-1">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star
+                        key={i}
+                        className="h-5 w-5 text-[#33FEA8] fill-[#33FEA8]"
+                      />
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+
+          <button
+            onClick={() => scrollToDirection('right')}
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 bg-[#33FEA8] text-[#24272D] rounded-full p-2 shadow-lg hover:scale-110 transition-transform"
+            aria-label="Next slide"
+          >
+            <ChevronRight className="h-6 w-6" />
+          </button>
         </div>
 
         <style>{`
