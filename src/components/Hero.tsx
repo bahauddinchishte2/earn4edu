@@ -57,7 +57,7 @@ export default function Hero() {
           <div className="relative">
             <div className="absolute -inset-4 bg-gradient-to-r from-[#33FEA8]/20 to-emerald-400/20 blur-3xl -z-10" />
             <img
-              src=""
+              src="/Public/Images/Earn4Edu-Initiative.jpeg"
               alt="Students collaborating"
               className="shadow-2xl"
             />
