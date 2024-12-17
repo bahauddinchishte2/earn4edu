@@ -4,7 +4,7 @@ const teamMembers = [
   {
     name: 'Bahauddin Chishte',
     role: 'Founder & Menor',
-    image: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fgithub.com%2FBahauddinChishte&psig=AOvVaw0QLTeGbPjn6GOQWUMgBOSB&ust=1734530218688000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCJC9st_6rooDFQAAAAAdAAAAABAE',
+    image: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fgithub.com%2FBahauddinChishte&psig=AOvVaw3iWqnSIhcpNx9bze5gMjuV&ust=1734463467872000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCOCVt5v7rooDFQAAAAAdAAAAABAJ',
     bio: 'Former educator passionate about bridging education and employment.',
   },
   {
