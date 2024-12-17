@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from 'react';
 
 const studentTestimonials = [
   {
-    name: "Sarah Chen",
+    name: "Bahauddin Chishte",
     role: "Computer Science Student",
     image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
     quote: "Earn4Edu helped me balance my studies while earning. The flexible schedule and mentorship were exactly what I needed.",

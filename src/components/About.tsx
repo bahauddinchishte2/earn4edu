@@ -2,21 +2,21 @@ import { Target, Heart, Users } from 'lucide-react';
 
 const teamMembers = [
   {
-    name: 'Sarah Johnson',
-    role: 'Founder & CEO',
-    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
+    name: 'Bahauddin Chishte',
+    role: 'Founder & Menor',
+    image: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fgithub.com%2FBahauddinChishte&psig=AOvVaw0QLTeGbPjn6GOQWUMgBOSB&ust=1734530218688000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCJC9st_6rooDFQAAAAAdAAAAABAE',
     bio: 'Former educator passionate about bridging education and employment.',
   },
   {
-    name: 'David Chen',
-    role: 'Head of Education',
-    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
+    name: 'Nazmul Islam',
+    role: 'Operations Lead',
+    image: 'https://media.licdn.com/dms/image/v2/D4D03AQGPrD-7zf6g2Q/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1720258657577?e=1740009600&v=beta&t=qHzkyom1-zUjcgSBOqPoOJZ5g1jSULqcxrPWPHg1xF8',
     bio: '10+ years experience in EdTech and skill development.',
   },
   {
-    name: 'Aisha Patel',
-    role: 'Student Success Lead',
-    image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
+    name: 'Bappy Golder',
+    role: 'Cheif Advisor',
+    image: 'https://media.licdn.com/dms/image/v2/D5603AQG2ff4V8Xdzew/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1694913470563?e=2147483647&v=beta&t=ghzMX3JovJWNWLdyfoLUdzDtpbtVBsAkGJerEFykV5U',
     bio: 'Dedicated to helping students achieve their full potential.',
   },
 ];
